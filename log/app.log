@@ -1,0 +1,6 @@
+2025-10-23 19:18:55 - INFO: Press Ctrl+C to stop the server
+2025-10-23 19:19:03 - INFO: .. Shutting down server ...
+2025-10-23 19:19:03 - TRACE: received graceful shutdown signal. Telling tasks to shutdown
+2025-10-23 19:19:03 - TRACE: signal received, not accepting new connections
+2025-10-23 19:19:03 - TRACE: waiting for 0 task(s) to finish
+2025-10-23 19:19:03 - INFO: Server has been shut down gracefully.
