@@ -21,4 +21,4 @@ root:
   level: trace
   appenders:
     - app_stdout
-    - app_file
+    # - app_file

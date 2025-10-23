@@ -5,6 +5,7 @@
     "codegen",
     "DECH",
     "dotenvy",
+    "reqwest",
     "rustc"
   ]
 }
