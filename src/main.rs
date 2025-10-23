@@ -1,24 +1,33 @@
-//! Run with
-//!
-//! ```not_rust
-//! cargo run -p example-hello-world
-//! ```
+use std::time::Instant;
 
-use axum::{Router, response::Html, routing::get};
+use dechdev_rs::utils::date_time::calculate_elapsed_duration;
+use rs_service_cloud::app::{app_server, util::helper};
 
-#[tokio::main]
-async fn main() {
-    // build our application with a route
-    let app = Router::new().route("/", get(handler));
+fn main() {
+    let start_time = Instant::now();
 
-    // run it
-    let listener = tokio::net::TcpListener::bind("127.0.0.1:4000")
-        .await
-        .unwrap();
-    println!("listening on {}", listener.local_addr().unwrap());
-    axum::serve(listener, app).await.unwrap();
-}
+    let app_name = env!("CARGO_PKG_NAME"); // Get
+    let version = env!("CARGO_PKG_VERSION"); // Get the version from Cargo.toml
 
-async fn handler() -> Html<&'static str> {
-    Html("<h1>Hello, World! From DECH</h1>")
+    let build_date = env!("BUILD_DATE");
+    let build_time = env!("BUILD_TIME");
+    let build_date_time = format!("{build_date} {build_time} UTC+7");
+
+    let platform = helper::get_platform();
+    let rustc_version = env!("RUSTC_VERSION");
+
+    println!(
+        "--- (Begin {app_name} v{version} | Built with {rustc_version} on {platform} at {build_date_time}) ---",
+    );
+    println!();
+
+    app_server::run();
+
+    println!();
+
+    let (days, hours, minutes, seconds, millis) = calculate_elapsed_duration(start_time);
+
+    println!(
+        "--- End ({days} days, {hours} hours, {minutes} minutes, {seconds} seconds, {millis} millis) ---"
+    );
 }
