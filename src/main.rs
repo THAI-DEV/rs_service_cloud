@@ -1,5 +1,6 @@
 use std::time::Instant;
 
+use dechdev_rs::utils::random::random_number;
 use rs_service_cloud::app::{
     app_serve,
     util::{calculate_elapsed_duration, helper},
@@ -28,6 +29,9 @@ fn main() {
     // info!("relevant general info");
     // warn!("warning this program doesn't do much");
     // error!("error message here");
+
+    let a = random_number(1, 100);
+    println!("Random number between 1 and 100: {a}");
 
     app_serve::run();
 
