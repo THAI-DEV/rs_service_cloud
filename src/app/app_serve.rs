@@ -12,20 +12,20 @@ pub async fn run() {
 
     println!("listening on {}", listener.local_addr().unwrap());
 
-    // axum::serve(listener, routes).await.unwrap();
+    axum::serve(listener, routes).await.unwrap();
 
-    let shutdown = async {
-        // info!("Press Ctrl+C to stop the server");
+    // let shutdown = async {
+    //     // info!("Press Ctrl+C to stop the server");
 
-        tokio::signal::ctrl_c()
-            .await
-            .expect("failed to install Ctrl+C handler");
-        // info!(".. Shutting down server ...");
-    };
+    //     tokio::signal::ctrl_c()
+    //         .await
+    //         .expect("failed to install Ctrl+C handler");
+    //     // info!(".. Shutting down server ...");
+    // };
 
-    let server = axum::serve(listener, routes).with_graceful_shutdown(shutdown);
+    // let server = axum::serve(listener, routes).with_graceful_shutdown(shutdown);
 
-    server.await.unwrap();
+    // server.await.unwrap();
     // info!("Server has been shut down gracefully.");
 }
 
