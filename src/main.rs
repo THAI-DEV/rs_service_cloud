@@ -1,8 +1,11 @@
 use std::time::Instant;
 
-use rs_service_cloud::app::{app_serve, util::helper};
+use rs_service_cloud::app::{
+    app_serve,
+    util::{calculate_elapsed_duration, helper},
+};
 fn main() {
-    let _start_time = Instant::now();
+    let start_time = Instant::now();
 
     let app_name = env!("CARGO_PKG_NAME"); // Get
     let version = env!("CARGO_PKG_VERSION"); // Get the version from Cargo.toml
@@ -30,10 +33,9 @@ fn main() {
 
     println!();
 
-    // let (days, hours, minutes, seconds, millis) = calculate_elapsed_duration(start_time);
+    let (days, hours, minutes, seconds, millis) = calculate_elapsed_duration(start_time);
 
-    // println!(
-    //     "--- End ({days} days, {hours} hours, {minutes} minutes, {seconds} seconds, {millis} millis) ---"
-    // );
-    print!("--- End ---");
+    println!(
+        "--- End ({days} days, {hours} hours, {minutes} minutes, {seconds} seconds, {millis} millis) ---"
+    );
 }
