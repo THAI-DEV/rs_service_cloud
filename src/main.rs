@@ -23,12 +23,6 @@ fn main() {
 
     println!();
 
-    // trace!("detailed tracing info");
-    // debug!("debug info");
-    // info!("relevant general info");
-    // warn!("warning this program doesn't do much");
-    // error!("error message here");
-
     // let a = random::random_number(1, 100);
     // println!("Random number between 1 and 100: {a}");
 
