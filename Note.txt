@@ -1,0 +1,1 @@
+https://kr.leapcell.io/blog/en/how-to-host-rust-projects
