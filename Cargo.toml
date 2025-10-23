@@ -15,9 +15,8 @@ chrono = "0.4.42"
 
 [dependencies]
 axum = "0.8.6"
+dechdev_rs = "0.1.15"
+dotenvy = "0.15.7"
 log = "0.4.28"
 log4rs = "1.4.0"
-# dechdev_rs = "0.1.15"
-dotenvy = "0.15.7"
-# openssl = { version = "0.10.74", features = ["vendored"] }
 tokio = { version = "1.48.0", features = ["full"] }

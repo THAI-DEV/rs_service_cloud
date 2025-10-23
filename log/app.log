@@ -19,3 +19,14 @@
 2025-10-23 19:28:08 - TRACE: signal received, not accepting new connections
 2025-10-23 19:28:08 - TRACE: waiting for 0 task(s) to finish
 2025-10-23 19:28:08 - INFO: Server has been shut down gracefully.
+2025-10-23 19:32:49 - INFO: Press Ctrl+C to stop the server
+2025-10-23 19:32:51 - INFO: .. Shutting down server ...
+2025-10-23 19:32:51 - TRACE: received graceful shutdown signal. Telling tasks to shutdown
+2025-10-23 19:32:51 - TRACE: signal received, not accepting new connections
+2025-10-23 19:32:51 - TRACE: waiting for 0 task(s) to finish
+2025-10-23 19:32:51 - INFO: Server has been shut down gracefully.
+2025-10-23 19:33:32 - INFO: Press Ctrl+C to stop the server
+2025-10-23 19:33:39 - TRACE: connection 127.0.0.1:50720 accepted
+2025-10-23 19:33:39 - TRACE: connection 127.0.0.1:56291 accepted
+2025-10-23 19:33:40 - TRACE: connection 127.0.0.1:64365 accepted
+2025-10-23 19:34:47 - TRACE: connection 127.0.0.1:64327 accepted
