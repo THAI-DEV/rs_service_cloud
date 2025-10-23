@@ -1,18 +1,18 @@
 fn main() {
-    println!(
-        "cargo:rustc-env=BUILD_DATE={}",
-        chrono::Utc::now()
-            .with_timezone(&chrono::FixedOffset::east_opt(7 * 3600).unwrap())
-            .format("%Y-%m-%d")
-    );
-    println!(
-        "cargo:rustc-env=BUILD_TIME={}",
-        chrono::Utc::now()
-            .with_timezone(&chrono::FixedOffset::east_opt(7 * 3600).unwrap())
-            .format("%H:%M:%S")
-    );
+    // println!(
+    //     "cargo:rustc-env=BUILD_DATE={}",
+    //     chrono::Utc::now()
+    //         .with_timezone(&chrono::FixedOffset::east_opt(7 * 3600).unwrap())
+    //         .format("%Y-%m-%d")
+    // );
+    // println!(
+    //     "cargo:rustc-env=BUILD_TIME={}",
+    //     chrono::Utc::now()
+    //         .with_timezone(&chrono::FixedOffset::east_opt(7 * 3600).unwrap())
+    //         .format("%H:%M:%S")
+    // );
 
-    println!("cargo:rustc-env=RUSTC_VERSION={}", "1.90.0");
+    // println!("cargo:rustc-env=RUSTC_VERSION={}", "1.90.0");
 }
 
 // fn get_rustc_version() -> String {
