@@ -1,24 +1,24 @@
 use std::time::Instant;
 
-use rs_service_cloud::app::app_serve;
+use dechdev_rs::utils::date_time::calculate_elapsed_duration;
+use rs_service_cloud::app::{app_serve, util::helper};
 fn main() {
-    let _start_time = Instant::now();
+    let start_time = Instant::now();
 
-    // let app_name = env!("CARGO_PKG_NAME"); // Get
-    // let version = env!("CARGO_PKG_VERSION"); // Get the version from Cargo.toml
+    let app_name = env!("CARGO_PKG_NAME"); // Get
+    let version = env!("CARGO_PKG_VERSION"); // Get the version from Cargo.toml
 
-    // let build_date = env!("BUILD_DATE");
-    // let build_time = env!("BUILD_TIME");
-    // let build_date_time = format!("{build_date} {build_time} UTC+7");
+    let build_date = env!("BUILD_DATE");
+    let build_time = env!("BUILD_TIME");
+    let build_date_time = format!("{build_date} {build_time} UTC+7");
 
-    // let platform = helper::get_platform();
-    // let rustc_version = env!("RUSTC_VERSION");
+    let platform = helper::get_platform();
+    let rustc_version = env!("RUSTC_VERSION");
 
-    // println!(
-    //     "--- (Begin {app_name} v{version} | Built with {rustc_version} on {platform} at {build_date_time}) ---",
-    // );
+    println!(
+        "--- (Begin {app_name} v{version} | Built with {rustc_version} on {platform} at {build_date_time}) ---",
+    );
 
-    println!("--- Begin ---",);
     println!();
 
     // trace!("detailed tracing info");
@@ -31,11 +31,9 @@ fn main() {
 
     println!();
 
-    // let (days, hours, minutes, seconds, millis) = calculate_elapsed_duration(start_time);
+    let (days, hours, minutes, seconds, millis) = calculate_elapsed_duration(start_time);
 
-    // println!(
-    //     "--- End ({days} days, {hours} hours, {minutes} minutes, {seconds} seconds, {millis} millis) ---"
-    // );
-
-    print!("--- End ---")
+    println!(
+        "--- End ({days} days, {hours} hours, {minutes} minutes, {seconds} seconds, {millis} millis) ---"
+    );
 }
