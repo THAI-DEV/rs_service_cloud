@@ -1,0 +1,17 @@
+services:
+  axum-example:
+    container_name: rs_service_cloud
+    # restart: always
+    restart: "no"
+    image: rust-app/rs_service_cloud:latest
+    ports:
+      - "4000:4000"
+    expose:
+      - 4000
+    networks:
+      - overlay
+    environment:
+      - TZ=Asia/Bangkok
+
+networks:
+  overlay:

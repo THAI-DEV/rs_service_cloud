@@ -1,0 +1,14 @@
+target/
+gen/
+log/
+migration/
+output/
+benches/
+tests/
+backup/
+.vscode/
+.git/
+Dockerfile
+.dockerignore
+.gitignore
+Note.txt

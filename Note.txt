@@ -1,1 +1,8 @@
 https://kr.leapcell.io/blog/en/how-to-host-rust-projects
+
+-----------------------------------------------------------------------
+Build Your Docker Image
+    docker build -t rust-app/rs_service_cloud .
+
+Run Docker Compose
+    docker compose up -d
