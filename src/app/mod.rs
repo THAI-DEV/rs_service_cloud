@@ -1,3 +1,3 @@
-pub mod util;
+pub mod utils;
 
 pub mod app_serve;

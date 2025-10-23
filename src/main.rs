@@ -2,7 +2,7 @@ use std::time::Instant;
 
 use rs_service_cloud::app::{
     app_serve,
-    util::{calculate_elapsed_duration, helper},
+    utils::{calculate_elapsed_duration, helper},
 };
 fn main() {
     let start_time = Instant::now();
