@@ -6,6 +6,7 @@
     "DECH",
     "dotenvy",
     "reqwest",
-    "rustc"
+    "rustc",
+    "rustls"
   ]
 }
