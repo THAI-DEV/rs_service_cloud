@@ -3,7 +3,8 @@ use std::time::Instant;
 use dechdev_rs::utils::date_time::calculate_elapsed_duration;
 use rs_service_cloud::app::app_server;
 
-fn main() {
+#[tokio::main]
+async fn main() {
     let start_time = Instant::now();
 
     // let app_name = env!("CARGO_PKG_NAME"); // Get
@@ -23,7 +24,7 @@ fn main() {
 
     println!();
 
-    app_server::run();
+    app_server::run().await;
 
     println!();
 
