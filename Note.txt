@@ -1,5 +1,8 @@
 https://kr.leapcell.io/blog/en/how-to-host-rust-projects
 
+https://leapcell.io/workspace/wsp1981275618479878144/dashboard
+    login with github
+
 -----------------------------------------------------------------------
 Build Your Docker Image
     docker build -t rust-app/rs_service_cloud .

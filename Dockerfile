@@ -1,4 +1,4 @@
-ARG RUST_VERSION=1.90.0
+ARG RUST_VERSION=1.90.1
 ARG APP_NAME=rs_service_cloud
 
 
