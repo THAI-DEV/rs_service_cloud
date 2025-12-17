@@ -15,7 +15,7 @@ chrono = "0.4.42"
 
 [dependencies]
 axum = "0.8.7"
-dechdev_rs = "0.1.38"
+dechdev_rs = "0.1.40"
 dotenvy = "0.15.7"
 log = "0.4.29"
 log4rs = "1.4.0"
