@@ -31,5 +31,5 @@ pub async fn run() {
 }
 
 async fn handler() -> Html<&'static str> {
-    Html("<h1>Hello, World From DECH</h1>")
+    Html("<h1>Hello, World From DECH (Create With Rust)</h1>")
 }
