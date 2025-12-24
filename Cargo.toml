@@ -14,8 +14,8 @@ strip = true
 chrono = "0.4.42"
 
 [dependencies]
-axum = "0.8.7"
-dechdev_rs = "0.1.40"
+axum = "0.8.8"
+dechdev_rs = "0.1.42"
 dotenvy = "0.15.7"
 log = "0.4.29"
 log4rs = "1.4.0"
