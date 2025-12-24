@@ -1,0 +1,7 @@
+@BaseUrl =  http://localhost:4000
+# @BaseUrl =  https://rsservicecloud-thai-dev7835-j15yptnm.apn.leapcell.dev
+
+###* Home
+GET {{BaseUrl}}/
+
+

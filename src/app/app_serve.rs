@@ -1,10 +1,18 @@
+use std::sync::{Mutex, OnceLock};
+
 use axum::{Router, response::Html, routing::get};
 use log::info;
+
+use crate::business::model::AppInfoModel;
+
+static APP_INFO_DATA: OnceLock<Mutex<AppInfoModel>> = OnceLock::new();
 
 #[tokio::main]
 pub async fn run() {
     // Initialize tracing for logging
     log4rs::init_file("config_log.yaml", Default::default()).unwrap();
+
+    init_app_info_data();
 
     // build our application with a route
     let routes = Router::new().route("/", get(handler));
@@ -30,6 +38,19 @@ pub async fn run() {
     info!("Server has been shut down gracefully.");
 }
 
-async fn handler() -> Html<&'static str> {
-    Html("<h1>Hello, World From DECH (Create With Rust)</h1>")
+async fn handler() -> Html<String> {
+    let str = format!(
+        "Hello, World From DECH (Start at : {})",
+        APP_INFO_DATA.get().unwrap().lock().unwrap().startup
+    );
+    Html(str)
+}
+
+fn init_app_info_data() -> &'static Mutex<AppInfoModel> {
+    APP_INFO_DATA.get_or_init(|| {
+        Mutex::new(AppInfoModel {
+            startup: chrono::Utc::now()
+                .with_timezone(&chrono::FixedOffset::east_opt(7 * 3600).expect("Invalid offset")),
+        })
+    })
 }

@@ -3,20 +3,20 @@ appenders:
     kind: console
     encoder:
       pattern: "{h({d(%Y-%m-%d %H:%M:%S)} - {l}: {m}{n})}"
-  app_file:
-    kind: rolling_file
-    path: "log/app.log"
-    policy:
-      trigger:
-        kind: size
-        limit: 100kb
-      roller:
-        kind: fixed_window
-        base: 1
-        count: 9
-        pattern: "log/app_{}.log"
-    encoder:
-      pattern: "{h({d(%Y-%m-%d %H:%M:%S)} - {l}: {m}{n})}"
+  # app_file:
+  #   kind: rolling_file
+  #   path: "log/app.log"
+  #   policy:
+  #     trigger:
+  #       kind: size
+  #       limit: 100kb
+  #     roller:
+  #       kind: fixed_window
+  #       base: 1
+  #       count: 9
+  #       pattern: "log/app_{}.log"
+  #   encoder:
+  #     pattern: "{h({d(%Y-%m-%d %H:%M:%S)} - {l}: {m}{n})}"
 root:
   level: trace
   appenders:
