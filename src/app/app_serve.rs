@@ -41,7 +41,13 @@ pub async fn run() {
 async fn handler() -> Html<String> {
     let str = format!(
         "Hello, World From DECH (Start at : {})",
-        APP_INFO_DATA.get().unwrap().lock().unwrap().startup
+        APP_INFO_DATA
+            .get()
+            .unwrap()
+            .lock()
+            .unwrap()
+            .startup
+            .format("%Y-%m-%d %H:%M:%S:%3f %:z")
     );
     Html(str)
 }
