@@ -53,6 +53,7 @@ async fn handler() -> Html<String> {
 }
 
 fn init_app_info_data() -> &'static Mutex<AppInfoModel> {
+    println!("Initializing APP_INFO_DATA...");
     APP_INFO_DATA.get_or_init(|| {
         Mutex::new(AppInfoModel {
             startup: chrono::Utc::now()
