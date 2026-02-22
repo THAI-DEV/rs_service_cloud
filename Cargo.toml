@@ -16,7 +16,7 @@ chrono = "0.4.43"
 [dependencies]
 axum = "0.8.8"
 chrono = { version = "0.4.43", features = ["serde"] }
-dechdev_rs = "0.1.43"
+dechdev_rs = "0.1.44"
 dotenvy = "0.15.7"
 log = "0.4.29"
 log4rs = "1.4.0"
