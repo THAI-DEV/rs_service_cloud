@@ -11,12 +11,12 @@ panic = "abort"
 strip = true
 
 [build-dependencies]
-chrono = "0.4.43"
+chrono = "0.4.44"
 
 [dependencies]
 axum = "0.8.8"
-chrono = { version = "0.4.43", features = ["serde"] }
-dechdev_rs = "0.1.44"
+chrono = { version = "0.4.44", features = ["serde"] }
+dechdev_rs = "0.1.45"
 dotenvy = "0.15.7"
 log = "0.4.29"
 log4rs = "1.4.0"
