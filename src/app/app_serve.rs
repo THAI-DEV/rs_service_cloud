@@ -1,5 +1,7 @@
 extern crate redis;
+use chrono::DateTime;
 use redis::Commands;
+use serde::{Deserialize, Serialize};
 
 use std::sync::{Mutex, OnceLock};
 
@@ -65,11 +67,15 @@ fn init_app_info_data() -> &'static Mutex<AppInfoModel> {
 }
 
 pub fn run_poc() {
-    let i = fetch_an_integer().unwrap();
-    println!("{}", i);
+    // let i = fetch_an_integer().unwrap();
+    // println!("{}", i);
+
+    let data = fetch_an_counter().unwrap();
+    println!("Counter value: {}", data.value);
+    println!("Counter timestamp: {}", data.timestamp);
 }
 
-fn fetch_an_integer() -> redis::RedisResult<isize> {
+fn _fetch_an_integer() -> redis::RedisResult<isize> {
     let client = redis::Client::open(config_env::get_config_env().redis_url.clone())?;
     let mut con = client.get_connection()?;
 
@@ -77,4 +83,32 @@ fn fetch_an_integer() -> redis::RedisResult<isize> {
     let _: () = con.set("answer", 42)?;
 
     con.get("answer")
+}
+
+fn fetch_an_counter() -> redis::RedisResult<Counter> {
+    let client = redis::Client::open(config_env::get_config_env().redis_url.clone())?;
+    let mut con = client.get_connection()?;
+
+    // throw away the result, just make sure it does not fail
+    // let _: () = con.set("answer", 42)?;
+    let data = Counter {
+        value: 42,
+        timestamp: chrono::Utc::now()
+            .with_timezone(&chrono::FixedOffset::east_opt(7 * 3600).expect("Invalid offset")),
+    };
+    let data_json = serde_json::to_string(&data).expect("Failed to serialize Counter to JSON");
+    let _: () = con.set("counter", data_json)?;
+
+    //get counter
+    let data_json: String = con.get("counter")?;
+    let result: Counter =
+        serde_json::from_str(&data_json).expect("Failed to deserialize JSON to Counter");
+    Ok(result)
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "UPPERCASE")]
+pub struct Counter {
+    pub value: i32,
+    pub timestamp: DateTime<chrono::FixedOffset>,
 }
