@@ -1,4 +1,3 @@
-extern crate redis;
 use chrono::DateTime;
 use redis::Commands;
 use serde::{Deserialize, Serialize};
