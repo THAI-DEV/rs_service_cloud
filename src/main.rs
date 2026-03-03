@@ -27,6 +27,7 @@ fn main() {
     // println!("Random number between 1 and 100: {a}");
 
     app_serve::run();
+    // app_serve::run_poc();
 
     println!();
 
