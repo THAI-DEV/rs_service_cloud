@@ -9,9 +9,7 @@ pub fn get_config_env() -> &'static ConfigEnv {
 
         let redis_url = dotenvy::var("REDIS_URL").expect("REDIS_URL environment variable not set");
 
-        let result = ConfigEnv {
-            redis_url: redis_url,
-        };
+        let result = ConfigEnv { redis_url };
         let result_json = serde_json::to_string_pretty(&result).unwrap();
 
         println!("**** Loading Config Env **** : {result_json}");
